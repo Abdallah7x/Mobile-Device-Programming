@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audio_cache.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter TutorialKart',
+      title: '',
       home: MyHomePage(),
     );
   }
@@ -37,6 +36,21 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 200,
               child: CustomPaint(
                 painter: OpenPainter(),
+                child: Center(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.transparent),
+                    ),
+                    onPressed: () {
+                      print('Black');
+                    },
+                    child: Text(
+                      'My color',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
             ),
             Container(
